@@ -1,0 +1,6 @@
+*.tif
+__pycache__/
+*.json
+*.zip
+train_images/
+evaluation_images/
