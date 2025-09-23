@@ -1,0 +1,13 @@
+rasterio
+segmentation_models_pytorch
+albumentations
+matplotlib
+seaborn
+pandas
+numpy<2
+torch
+torchvision
+tqdm
+pillow
+
+
