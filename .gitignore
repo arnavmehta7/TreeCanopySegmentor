@@ -4,4 +4,4 @@ __pycache__/
 *.zip
 train_images/
 evaluation_images/
-*.png
+
