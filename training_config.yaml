@@ -1,0 +1,54 @@
+# YOLO Training Configuration for Tree Canopy Segmentation
+# This configuration file controls the training pipeline
+
+# Dataset configuration
+data_yaml: "/workspace/configurations/model_data-seg.yaml"
+
+# Models to train (can be a subset for quick testing)
+models:
+  - "yolov8n-seg.pt"
+  - "yolov8s-seg.pt"
+  - "yolov8m-seg.pt"
+  - "yolov8l-seg.pt"
+  - "yolo11n-seg.pt"
+  - "yolo11s-seg.pt"
+  - "yolo11m-seg.pt"
+  - "yolo11l-seg.pt"
+
+# Input sizes to test
+input_sizes: [640, 832, 1024]
+
+# Batch sizes to test (will be adjusted based on input size)
+batch_sizes: [8, 12, 16]
+
+# Training parameters
+epochs: 100
+hyperopt_trials: 30
+hyperopt_epochs: 50
+
+# Hardware configuration
+device: "0"  # GPU device, set to "cpu" if no GPU available
+workers: 8
+patience: 50
+save_period: -1
+cache: "ram"
+
+# Reproducibility
+deterministic: true
+seed: 42
+
+# Performance optimization
+amp: true  # Automatic Mixed Precision
+fraction: 1.0
+
+# Validation and evaluation
+val: true
+plots: true
+save_json: true
+conf: 0.001
+iou: 0.6
+max_det: 300
+
+# W&B configuration
+wandb_project: "tree-canopy-segmentation"
+wandb_entity: "paapi"
