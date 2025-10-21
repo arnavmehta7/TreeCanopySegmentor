@@ -1,0 +1,20 @@
+# Tree Canopy Segmentation Dataset Configuration
+# Update paths according to your dataset structure
+
+# Dataset paths
+path: /workspace/data  # Root directory of the dataset
+train: images/train    # Training images (relative to 'path')
+val: images/val        # Validation images (relative to 'path')
+test: images/test      # Test images (relative to 'path')
+
+# Number of classes
+nc: 1
+
+# Class names
+names: ['tree_canopy']
+
+# Additional dataset information
+download: false
+license: MIT
+version: 1.0
+description: Tree Canopy Segmentation Dataset for YOLO training

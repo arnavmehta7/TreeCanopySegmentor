@@ -12,5 +12,10 @@ torch
 torchvision
 tqdm
 pillow
+wandb
+weave
+scikit-learn
+tensorboard
+optuna
 
 
