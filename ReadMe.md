@@ -146,11 +146,4 @@ Solafune Tree Canopy Segmentation Challenge:
 
 ---
 
-If you want, I can add:
-- 📊 A model comparison table  
-- 🖼️ Prediction image grids  
-- 🧱 Architecture diagrams  
-- 📈 Comet ML charts in markdown  
-- 📦 Training/Inference instructions  
 
-Just tell me!  
