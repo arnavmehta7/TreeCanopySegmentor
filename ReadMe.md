@@ -66,10 +66,9 @@ Solafune Tree Canopy Segmentation Challenge:
 
 ### 6. **RF-DETR**
 - Tested to explore DETR-style approaches.
-- Results:
-  - Very slow convergence.
-  - High miss rate.
-  - Worst performance on tiny objects.
+- TRIANING FAILED / ACCURACY WAS TOO LOW:
+  - Unable to generally predict > 100 images at a time. And if we want to increase threshold it was extremely computationally expensive.
+  - Our Images have too many annotations per image, which even on A100 the model cannot fit in. We contacted them officially on github issue but it won't work for us.
 - Conclusion → **Not suitable**.
 
 ---
