@@ -7,23 +7,26 @@ The task proved extremely challenging due to **tiny object sizes**, **dense cano
 
 ---
 
+## 🔗 Competition Link
+
+Solafune Tree Canopy Segmentation Challenge:  
+🔗 https://solafune.com/competitions/26ff758c-7422-4cd1-bfe0-daecfc40db70?menu=about&tab=#overview
+
+---
+
 ## 🚀 Models We Experimented With
 
-### 1. **UNet (Baseline)**
+### 1. **UNet (Not Useful)**
 - First experiment for segmentation.
 - Simple encoder–decoder CNN.
-- Failed to capture small, irregular tree boundaries.
-- Struggled badly on tiny canopies → under-segmentation.
+- Not useful as it doesn't perform **instance segmentation**
 
 ---
 
 ### 2. **Detectron2**
-- Tried both:
-  - Mask R-CNN  
-  - Cascade Mask R-CNN
 - Problems:
-  - Missed **very tiny individual trees**.
-  - Slow training.
+  - Very Slow Convergence.
+  - Slow training even on A100.
   - Struggled with overlapping crowns.
 - Conclusion → **Not suitable without extremely high-resolution imagery**.
 
@@ -33,9 +36,9 @@ The task proved extremely challenging due to **tiny object sizes**, **dense cano
 - Attempted high-end transformer-based segmentation.
 - **Swin-L / Swin-B** backbones tested.
 - Pros:
-  - Good region-level segmentation.
+  - Easy to Train
 - Cons:
-  - Still **missed many small isolated crowns**.
+  - Still Low Accuracy.
   - Dataset too small for transformer models to generalize well.
 
 ---
@@ -121,29 +124,23 @@ The dataset contains:
 - **merged crowns**
 - **labeling inconsistencies**
 
-When augmentations increased data diversity, these annotation errors amplified, hurting learning.
+When augmentations increased data diversity, **these annotation errors amplified,** hurting learning.
 
 ---
+
+### Stage 4: PURGE THE BAD DATA IN THE ORIGINAL IMAGES
+We found alot of original images had missing and poor labels. We manually searched through 150 of those files and purged the irrelevant ones.
 
 ## 🎯 Final Conclusion
 
 ### **YOLOv11-M (960px) was the most effective and reliable model.**
 
 It achieved:
-- best precision  
-- best recall  
-- best small-crown detection  
-- best segmentation separation  
+- best precision. 
+- best recall.
+- best small-crown detection.
+- best segmentation separation. 
 
 UNet, Detectron2, Mask2Former, SAM2/SAM3, RF-DETR all fell short primarily due to the **tiny object size problem** and **dataset limitations**.
-
----
-
-## 🔗 Competition Link
-
-Solafune Tree Canopy Segmentation Challenge:  
-🔗 https://solafune.com/competitions/26ff758c-7422-4cd1-bfe0-daecfc40db70?menu=about&tab=#overview
-
----
 
 
