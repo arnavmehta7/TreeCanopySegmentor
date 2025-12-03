@@ -2,7 +2,8 @@
 **Team SupTumber**  
 Arnav Mehta, Ananya Singla, Mohil Ahuja, Prasham Sheth, Vaibhav Dabas  
 
-Video:
+## Video:
+
 [![Video Explaining](https://img.youtube.com/vi/0vSGzhuIN-w/0.jpg)](https://www.youtube.com/watch?v=0vSGzhuIN-w)
 
 
